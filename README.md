@@ -1,203 +1,138 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+## Explanation of Application
+Recipes.com is the easiest way to ditch that cook book and have your recipes easily accessible on the web. By inputting your recipes into Recipes.com they will be saved for you to reference when ever you need. You can also edit the recipes for those "work in process" recipes you've been working on. 
 
-# express-api-template
+## Deployment
 
-A template for starting projects with `express` as an API. Includes
-authentication and common middlewares.
+X Be deployed online, where the rest of the world can access it.
+√ Host on your public Github page, not Github Enterprise.
+X Deploy client application on GH pages.
+X Deploy server application on Heroku.
 
-## Installation
+## Version Control
 
-1. [Download](../../archive/main.zip) this template.
-1. Move the .zip file to your `sei/projects/` directory and Unzip it (creating a
-   folder) -- **NOTE:** if the folder was already unzipped, use the `mv` command
-   line to move it to the `sei/projects/` directory.
-1. Rename the directory from express-api-template -> your-app-name.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Move into the new project and `git init`.
-1. Replace all instances of `'express-api-template'` with your app name.
-1. Install dependencies with `npm install`.
-1. Ensure that you have `nodemon` installed by running `npm install -g nodemon`.
-1. Ensure the API is functioning properly by running `npm run server`.
-1. Once everything is working, make an initial commit.
-1. Follow the steps in [express-api-deployment-guide](https://git.generalassemb.ly/ga-wdi-boston/express-api-deployment-guide)
+Demonstrate using version control by:
 
-## Structure
+√ Sharing your work through a git repository hosted on Github.
+√ Making frequent, cohesive commits dating back to the first day of the project week.
+√ 1 commit on the first day of project week on both repos.
+√ At least 1 commit every day during project week (not necessarily on both repos).
 
-Dependencies are stored in [`package.json`](package.json).
+## Documentation
 
-The most important file for understanding the structure of the template is
-`server.js`. This is where the actual Express `app` object is created, where
-the middlewares and routes are registered, and more. To register a routefile,
-follow the pattern established here with `exampleRoutes` and `userRoutes`. If
-you want to add any middlewares to your app, do that here.
+Produce documentation on Github:
 
-The `app` directory contains models and route files. Models are simply Mongoose
-models. To create your own, follow the patterns established in
-`app/models/example.js`. Route files are somewhat similar to controllers in
-Rails, but they cover more functionality, including serialization and deciding
-which HTTP verbs to accept and what to do with them.
+√ Create 2 Github repos (one for your front-end and one for your back-end)
+√ Pin both repositories on GitHub as a Popular Repository
 
-The `config` directory holds just `db.js`, which is where you specify the name
-and URL of your database.
+Both front-end and back-end repos should include README's with:
 
-The `lib` directory is for code that will be used in other places in the
-application. The token authentication code is stored in `lib/auth.js`. The
-other files in `lib` deal with error handling. `custom_errors.js` is where all
-the different custom classes of errors are created. If you need some other kind
-of error message, you can add it here. There are also some functions defined
-here that are used elsewhere to check for errors. `lib/error_handler.js` is a
-function that will be used in all your `.catch`es. It catches errors, and sets
-the response status code based on what type of error got thrown.
+√ An explanation of the what the app does and how it works.
+√ Complete the repository Description field and Website field with a meaningful sentence description of the application and link to the live URL github image
+√ A link to the other repo
+√ A link to both deployed sites
+√ List of technologies used
+  √ Mongo DB
+  √ Express
+  √ JS
+  √ React
+√ List unsolved problems which would be fixed in future iterations.
+√ Document your planning, process and problem-solving strategy
+    √I talked with my wife about not knowing what I wanted to do for this project and she gave me the idea for a recipe tracking application.
+    √Then I thought about all the things that needed to be tracked about a recipe and drew up wireframes for how I would like an application like that to   flow.
+    √Then I made it! :D
 
-You probably will only need to interact with files in `app/models`,
-`app/routes`, and `server.js`. You'll need to edit `db/config.js` just once,
-to change the name of your app.
+Your front-end repo's README should also have:
 
-## Tasks
+√ Link to wireframes and user stories
+  √ WireFrame:
+      ![Imgur](https://imgur.com/yBrkM5C.png)
 
-Instead of `grunt`, this template uses `npm` as a task runner. This is more
-conventional for modern Express apps, and it's handy because we'll definitely
-use `npm` anyway. These are the commands available:
+  User Stories:
+    √ User must be able to sign up
+    √ User must be able to sign in
+    √ User must be able to sign out
+    √ User must be able to change password
+    √ User must be able to create a recipe
+    √ User must be able to view all their recipes
+    √ User must be able to view a recipe
+    √ User must be able to update a recipe
+    √ User must be able to delete a recipe
+    
+√ An embedded screenshot of the app
+  √Screen Shot: 
+    ![Imgur](https://imgur.com/rMvuhf8.png)
 
-| Command                | Effect                                                                                                      |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
-| `npm test`             | Runs automated tests.                                                                                       |
-| `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
+√ Set up and installation instructions for front end application
+  √ Set Up:
+     Fork and clone repo
+     Navigate into repo
+     NPM install
+     NPM Start
 
-## API
+Your back-end repo's README should also have
 
-Use this as the basis for your own API documentation. Add a new third-level
-heading for your custom entities, and follow the pattern provided for the
-built-in user authentication documentation.
+√ Link to Entity Relationship Diagram (ERD).
+  ERD: 
+  
+  ![Imgur](https://imgur.com/KSkCcv2.png)
 
-Scripts are included in [`curl-scripts`](curl-scripts) to test built-in actions.
-Add your own scripts to test your custom API.
+√ A catalog of routes (paths and methods) that the API expects.
+  √ recipes/new
+      creates a new recipe
+  √ recipes/find-recipes
+      finds all recipes owned by the current user
+  √ recipes/delete/:userid/:id
+      deletes the selected recipes
+  √ recipes/update/:id
+      updates the recipes ingredients or steps
 
-### Authentication
+√ Set up and installation instructions for back end application
+  √ Set Up:
+     Fork and clone repo
+     Navigate into repo
+     NPM install
+     Nodemon server.js
 
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| POST   | `/sign-up`             | `users#signup`    |
-| POST   | `/sign-in`             | `users#signin`    |
-| PATCH  | `/change-password/` | `users#changepw`  |
-| DELETE | `/sign-out/`        | `users#signout`   |
+Auth Specifications
+√ Signup with email, user, password, and password confirmation.
+√ Login with username and password.
+√ Logout when logged in.
+√ Change password with current and new password.
+√ Signup and Signin must only be available to not signed in users.
+√ Logout and Change password must only be available to signed in users.
+√ Give feedback to the user after each action's success or failure.
+√ All forms must clear after submit success and user sign-out
+    *** Update Forms to not clear on purpose for functionality. ***
+ (Optional) Reset form to initial state on failure
 
-#### POST /sign-up
+Client Specifications
+√ Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
+√ Have semantically clean HTML and CSS
+√ User must be able to create a new resource
+√ User must be able to update a resource
+√ User must be able to delete a resource
+√ User must be able to view a single or multiple resource(s)
+√ All resource actions that change data must only be available to a signed in user.
+√ Give feedback to the user after each action's success or failure.
+√ All forms must clear after submit success or failure
+    *** Update Forms to not clear on purpose for functionality. ***
+√ Protect against Cross-site Scripting
 
-Request:
+API Specifications
+√ Use Express or Django to build an API.
+√ Create at least 4 RESTful routes for handling GET, POST, PUT/PATCH, and DELETE requests for a resource other than User.
+√ Have at least 1 resource that has a relationship to User
+√ Any actions which change data must be authenticated and the data must be "owned" by the user performing the change or a user determined by an access     control list
 
-```sh
-curl --include --request POST http://localhost:4741/sign-up \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password",
-      "password_confirmation": "an example password"
-    }
-  }'
-```
+DO NOT!!
+Your app must not:
 
-```sh
-curl-scripts/sign-up.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 201 Created
-Content-Type: application/json; charset=utf-8
-
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email"
-  }
-}
-```
-
-#### POST /sign-in
-
-Request:
-
-```sh
-curl --include --request POST http://localhost:4741/sign-in \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "an@example.email",
-      "password": "an example password"
-    }
-  }'
-```
-
-```sh
-curl-scripts/sign-in.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-
-{
-  "user": {
-    "id": 1,
-    "email": "an@example.email",
-    "token": "33ad6372f795694b333ec5f329ebeaaa"
-  }
-}
-```
-
-#### PATCH /change-password/
-
-Request:
-
-```sh
-curl --include --request PATCH http://localhost:4741/change-password/ \
-  --header "Authorization: Bearer $TOKEN" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "passwords": {
-      "old": "an example password",
-      "new": "super sekrit"
-    }
-  }'
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/change-password.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-#### DELETE /sign-out/
-
-Request:
-
-```sh
-curl --include --request DELETE http://localhost:4741/sign-out/ \
-  --header "Authorization: Bearer $TOKEN"
-```
-
-```sh
-TOKEN=33ad6372f795694b333ec5f329ebeaaa curl-scripts/sign-out.sh
-```
-
-Response:
-
-```md
-HTTP/1.1 204 No Content
-```
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+√ Delete your repository at any time or start over.
+√ Rely on refreshing the page for any functionality.
+√ Have any user-facing bugs.
+√ Display non-functional buttons, nor buttons that do not successfully complete a task.
+√ Show actions at inappropriate times (example: change password form when a user is not signed in).
+√ Forms not clearing at appropriate times (example: sign up form not clearing after success).
+√ Use alerts for anything.
+√ Display errors or warnings in the console.
+√ Display debugging messages in the console.
